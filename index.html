@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+</head>
+
+<body>
+    <div id="content">
+        <div id="left">
+            <h1 style="margin-left:30%; font-family:verdana">SQL Cheat Sheet</h1>
+            <pre contenteditable="true"><code class="sql">
+  CREATE TABLE EMPLOYEE( id INT PRIMARY KEY, name VARCHAR(25) ); 
+  INSERT INTO EMPLOYEE(id, name) VALUES(1, 'aman'); 
+  INSERT INTO EMPLOYEE(id, name) VALUES(2, 'pihu'); 
+  INSERT INTO EMPLOYEE(id, name) VALUES(3, 'rajeev'); 
+  INSERT INTO EMPLOYEE(id, name) VALUES(4, 'monika'); 
+  INSERT INTO EMPLOYEE(id, name) VALUES(5, 'prabhat'); 
+  INSERT INTO EMPLOYEE(id, name) VALUES(6, 'chaman'); 
+
+  SELECT * FROM EMPLOYEE; 
+</code></pre>
+            <table class="center">
+                <tbody>
+                    <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                    </tr>
+                    <tr>
+                        <td>1 </td>
+                        <td>aman</td>
+                    </tr>
+                    <tr>
+                        <td>2 </td>
+                        <td>pihu</td>
+                    </tr>
+                    <tr>
+                        <td>3 </td>
+                        <td> rajeev</td>
+                    </tr>
+                    <tr>
+                        <td>4 </td>
+                        <td>monika</td>
+                    </tr>
+                    <tr>
+                        <td>5 </td>
+                        <td>prabhat</td>
+                    </tr>
+                    <tr>
+                        <td>6 </td>
+                        <td>chaman</td>
+                    </tr>
+                </tbody>
+            </table>
+            <pre contenteditable="true"><code class="sql">
+
+  CREATE TABLE DEPARTMENT( id INT, name varchar(5) ); 
+  INSERT INTO DEPARTMENT(id, name) VALUES(0, 'DE'); 
+  INSERT INTO DEPARTMENT(id, name) VALUES(1, 'HR'); 
+  INSERT INTO DEPARTMENT(id, name) VALUES(2, 'HR'); 
+  INSERT INTO DEPARTMENT(id, name) VALUES(4, 'HR');
+  INSERT INTO DEPARTMENT(id, name) VALUES(5, 'DS'); 
+  INSERT INTO DEPARTMENT(id, name) VALUES(6, 'DE'); 
+  INSERT INTO DEPARTMENT(id, name) VALUES(7, 'ECE'); 
+  
+  SELECT * FROM DEPARTMENT; 
+  </code></pre>
+            <table class="center">
+                <tbody>
+                    <tr>
+                        <th>ID </td>
+                            <td>NAME</th>
+                    </tr>
+                    <tr>
+                        <td>0 </td>
+                        <td>DE</td>
+                    </tr>
+                    <tr>
+                        <td>1 </td>
+                        <td>HR</td>
+                    </tr>
+                    <tr>
+                        <td>2 </td>
+                        <td>HR</td>
+                    </tr>
+                    <tr>
+                        <td>4 </td>
+                        <td>HR</td>
+                    </tr>
+                    <tr>
+                        <td>5 </td>
+                        <td>DS</td>
+                    </tr>
+                    <tr>
+                        <td>6 </td>
+                        <td>DE</td>
+                    </tr>
+                    <tr>
+                        <td>7 </td>
+                        <td>ECE</td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="https://livesql.oracle.com/" target="_blank" style="margin-left: 30%;">Practice: Oracle SQL IDE</a>
+        </div>
+
+        <div id="right" contenteditable="true">
+            <pre><code class="sql">
+  SELECT * FROM EMPLOYEE e JOIN DEPARTMENT d ON e.id = d.id; 
+  -- ID NAME    ID NAME 
+  -- 1  aman    1  HR 
+  -- 2  pihu    2  HR 
+  -- 4  monika  4  HR 
+  -- 5  prabhat 5  DS 
+  -- 6  chaman  6  DE 
+  
+  SELECT * FROM EMPLOYEE e LEFT JOIN DEPARTMENT d ON e.id = d.id; 
+  -- ID NAME  ID NAME 
+  -- 1  aman    1 HR 
+  -- 2  pihu    2 HR 
+  -- 4  monika  4 HR 
+  -- 5  prabhat 5 DS 
+  -- 6  chaman  6 DE 
+  -- 3  rajeev  - - 
+  
+  SELECT * FROM DEPARTMENT d LEFT JOIN EMPLOYEE e ON d.id = e.id; 
+  -- ID NAME ID NAME 
+  -- 1  HR   1  aman 
+  -- 2  HR   2  pihu 
+  -- 4  HR   4  monika 
+  -- 5  DS   5  prabhat 
+  -- 6  DE   6  chaman 
+  -- 7  ECE  -  - 
+  -- 8  DE   -  - 
+  
+  SELECT * FROM DEPARTMENT d RIGHT JOIN EMPLOYEE e ON d.id = e.id; 
+  -- ID NAME ID NAME 
+  -- 1 HR 1 aman 
+  -- 2 HR 2 pihu 
+  -- 4 HR 4 monika 
+  -- 5 DS 5 prabhat 
+  -- 6 DE 6 chaman 
+  -- - -  3 rajeev 
+  
+  SELECT * FROM EMPLOYEE d RIGHT JOIN DEPARTMENT e ON d.id = e.id; 
+  -- ID NAME   ID NAME 
+  -- 1 aman    1 HR 
+  -- 2 pihu    2 HR 
+  -- 4 monika  4 HR 
+  -- 5 prabhat 5 DS 
+  -- 6 chaman  6 DE 
+  -- - -       7 ECE 
+  -- - -       0 DE 
+  
+  SELECT * FROM EMPLOYEE e FULL JOIN DEPARTMENT d ON e.id = d.id; 
+  -- ID NAME   ID NAME 
+  -- -  -       0  DE 
+  -- 1  aman    1 HR 
+  -- 2  pihu    2 HR 
+  -- 4  monika  4 HR 
+  -- 5  prabhat 5 DS 
+  -- 6  chaman  6 DE 
+  -- -  -       7 ECE 
+  -- 3  rajeev  - - 
+  
+  SELECT * FROM EMPLOYEE CROSS JOIN DEPARTMENT; 
+  -- ID NAME   ID NAME 
+  -- 1  aman   0 DE 
+  -- 1  aman   1 HR 
+  -- 1  aman   2 HR 
+  -- 1  aman   4 HR 
+  -- 1  aman   5 DS 
+  -- . 
+  -- . 
+  -- . 
+  -- 6  chaman 0 DE 
+  -- 6  chaman 1 HR 
+  -- 6  chaman 2 HR 
+  -- 6  chaman 4 HR 
+  -- 6  chaman 5 DS 
+  -- 6  chaman 6 DE 
+  -- 6  chaman 7 ECE 
+  
+  -- SUBQUERY 
+  SELECT * FROM DEPARTMENT WHERE id NOT IN (SELECT id from EMPLOYEE); 
+  -- ID NAME 
+  -- 7  ECE 
+  -- 0  DE 
+
+  -- ORDER BY 
+  SELECT * FROM DEPARTMENT ORDER BY NAME, ID DESC; 
+  -- ID NAME 
+  -- 6  DE 
+  -- 0  DE 
+  -- 5  DS 
+  -- 7  ECE 
+  -- 4  HR 
+  -- 2  HR 
+  -- 1  HR 
+  
+  -- GROUP BY 
+  SELECT NAME, SUM(id) as id_sum FROM DEPARTMENT GROUP BY NAME; 
+  -- NAME ID_SUM 
+  -- DS   5 
+  -- HR   7 
+  -- ECE  7 
+  -- DE   6 
+  
+  -- HAVING 
+  SELECT NAME, SUM(id) as id_sum FROM DEPARTMENT GROUP BY NAME HAVING SUM(id) = 5; 
+  -- NAME ID_SUM 
+  -- DS   5 
+  
+  -- UNION 
+  SELECT id from EMPLOYEE UNION SELECT id from DEPARTMENT; 
+  -- ID 
+  -- 0 
+  -- 1 
+  -- 2 
+  -- 3 
+  -- 4 
+  -- 5 
+  -- 6 
+  -- 7 
+  
+  -- UNION ALL 
+  SELECT id from EMPLOYEE UNION ALL SELECT id from DEPARTMENT; 
+  -- ID 
+  -- 1 
+  -- 2 
+  -- 3 
+  -- 4 
+  -- 5 
+  -- 6 
+  -- 0 
+  -- 1 
+  -- 2 
+  -- 4 
+  -- 5 
+  -- 6 
+  -- 7 
+  
+  -- INTERSECT 
+  SELECT id from EMPLOYEE INTERSECT SELECT id FROM DEPARTMENT; 
+  -- ID 
+  -- 1 
+  -- 2 
+  -- 4 
+  -- 5 
+  -- 6 
+  
+  -- MINUS 
+  SELECT id from EMPLOYEE MINUS SELECT id FROM DEPARTMENT; 
+  -- ID 
+  -- 3 
+  
+  SELECT id from DEPARTMENT MINUS SELECT id FROM EMPLOYEE; 
+  -- ID 
+  -- 0 
+  -- 7 
+  
+  -- WILDCARD 
+  SELECT * FROM EMPLOYEE WHERE NAME LIKE '_m__'; 
+  -- ID NAME 
+  -- 1 aman 
+  
+  SELECT * FROM EMPLOYEE WHERE NAME LIKE '%man'; 
+  -- ID NAME 
+  -- 1 aman 
+  -- 6 chaman 
+  
+  SELECT * FROM EMPLOYEE WHERE NAME LIKE '%r%'; 
+  -- ID NAME 
+  -- 3 rajeev 
+  -- 5 prabhat 
+  
+  SELECT * FROM EMPLOYEE WHERE NAME LIKE '%h_'; 
+  -- ID NAME -- 2 pihu
+  
+  DROP TABLE EMPLOYEE; 
+  DROP TABLE DEPARTMENT; 
+</code></pre>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+#content,
+html,
+body {
+    height: 100%;
+    color: green;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.center {
+    margin-left: 5%;
+    margin-right: auto;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0%;
+}
+
+#left {
+    float: left;
+    width: 45%;
+    background: whitesmoke;
+    height: 100%;
+    overflow: scroll;
+}
+
+#right {
+    float: left;
+    width: 55%;
+    background: whitesmoke;
+    height: 100%;
+    overflow: scroll;
+}
+
+
+/* unvisited link */
+
+a:link {
+    color: green;
+}
+
+
+/* visited link */
+
+a:visited {
+    color: gray;
+}
+
+
+/* mouse over link */
+
+a:hover {
+    color: blue;
+}
+
+
+/* selected link */
+
+a:active {
+    color: red;
+}
