@@ -124,7 +124,7 @@
   -- 6  chaman  6  DE 
   
   SELECT * FROM EMPLOYEE e LEFT JOIN DEPARTMENT d ON e.id = d.id; 
-  -- ID NAME  ID NAME 
+  -- ID NAME   ID NAME 
   -- 1  aman    1 HR 
   -- 2  pihu    2 HR 
   -- 4  monika  4 HR 
@@ -144,22 +144,22 @@
   
   SELECT * FROM DEPARTMENT d RIGHT JOIN EMPLOYEE e ON d.id = e.id; 
   -- ID NAME ID NAME 
-  -- 1 HR 1 aman 
-  -- 2 HR 2 pihu 
-  -- 4 HR 4 monika 
-  -- 5 DS 5 prabhat 
-  -- 6 DE 6 chaman 
-  -- - -  3 rajeev 
+  -- 1  HR   1 aman 
+  -- 2  HR   2 pihu 
+  -- 4  HR   4 monika 
+  -- 5  DS   5 prabhat 
+  -- 6  DE   6 chaman 
+  -- -  -    3 rajeev 
   
   SELECT * FROM EMPLOYEE d RIGHT JOIN DEPARTMENT e ON d.id = e.id; 
-  -- ID NAME   ID NAME 
-  -- 1 aman    1 HR 
-  -- 2 pihu    2 HR 
-  -- 4 monika  4 HR 
-  -- 5 prabhat 5 DS 
-  -- 6 chaman  6 DE 
-  -- - -       7 ECE 
-  -- - -       0 DE 
+  -- ID NAME    ID NAME 
+  -- 1  aman    1 HR 
+  -- 2  pihu    2 HR 
+  -- 4  monika  4 HR 
+  -- 5  prabhat 5 DS 
+  -- 6  chaman  6 DE 
+  -- -  -       7 ECE 
+  -- -  -       0 DE 
   
   SELECT * FROM EMPLOYEE e FULL JOIN DEPARTMENT d ON e.id = d.id; 
   -- ID NAME   ID NAME 
@@ -271,20 +271,21 @@
   -- WILDCARD 
   SELECT * FROM EMPLOYEE WHERE NAME LIKE '_m__'; 
   -- ID NAME 
-  -- 1 aman 
+  -- 1  aman 
   
   SELECT * FROM EMPLOYEE WHERE NAME LIKE '%man'; 
   -- ID NAME 
-  -- 1 aman 
-  -- 6 chaman 
+  -- 1  aman 
+  -- 6  chaman 
   
   SELECT * FROM EMPLOYEE WHERE NAME LIKE '%r%'; 
   -- ID NAME 
-  -- 3 rajeev 
-  -- 5 prabhat 
+  -- 3  rajeev 
+  -- 5  prabhat 
   
   SELECT * FROM EMPLOYEE WHERE NAME LIKE '%h_'; 
-  -- ID NAME -- 2 pihu
+  -- ID NAME 
+  -- 2 pihu
   
   DROP TABLE EMPLOYEE; 
   DROP TABLE DEPARTMENT; 
