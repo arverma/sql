@@ -1,4 +1,4 @@
-@media screen and (max-device-width: 480px) and (orientation: portrait) {
+@media all and (max-width: 480px) {
     #content,
     html,
     body {
@@ -63,84 +63,7 @@
     }
 }
 
-
-/* #### Mobile Phones Landscape #### */
-
-@media screen and (max-device-width: 640px) and (orientation: landscape) {
-    /* some CSS here */
-    #content,
-    html,
-    body {
-        height: 100%;
-        color: green;
-    }
-    table,
-    th,
-    td {
-        border: 1px solid black;
-        border-collapse: collapse;
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-    .center {
-        margin-left: 5%;
-        margin-right: auto;
-    }
-    * {
-        box-sizing: border-box;
-        margin: 0%;
-    }
-    /* #left {
-    float: left;
-    width: 45%;
-    background: whitesmoke;
-    height: 100%;
-    overflow: scroll;
-} */
-    #left {
-        position: absolute;
-        top: 0px;
-        height: 40%;
-        width: 100%;
-        background: whitesmoke;
-        /* height: 100%; */
-        overflow: scroll;
-    }
-    /* #right {
-    float: left;
-    width: 55%;
-    background: whitesmoke;
-    height: 100%;
-    overflow: scroll;
-} */
-    #right {
-        position: absolute;
-        bottom: 0px;
-        height: 60%;
-        width: 100%;
-        background: whitesmoke;
-        /* height: 100%; */
-        overflow: scroll;
-    }
-    /* unvisited link */
-    a:link {
-        color: green;
-    }
-    /* visited link */
-    a:visited {
-        color: gray;
-    }
-    /* mouse over link */
-    a:hover {
-        color: blue;
-    }
-    /* selected link */
-    a:active {
-        color: red;
-    }
-}
-
-@media screen and (min-width: 600px) {
+@media all and (min-width: 600px) {
     /* some CSS here */
     #content,
     html,
