@@ -1,4 +1,4 @@
-@media all and (max-width: 480px) {
+@media (orientation:portrait) {
     #content,
     html,
     body {
@@ -63,7 +63,7 @@
     }
 }
 
-@media all and (min-width: 600px) {
+@media (orientation: landscape) {
     /* some CSS here */
     #content,
     html,
