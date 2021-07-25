@@ -13,8 +13,13 @@
         padding-left: 15px;
         padding-right: 15px;
     }
+    h1 {
+        margin-left: 25px;
+        font-family: verdana;
+    }
     .center {
-        margin-left: 5%;
+        margin-top: 5%;
+        margin-left: 25px;
         margin-right: auto;
     }
     * {
@@ -24,7 +29,7 @@
     #left {
         position: absolute;
         top: 0px;
-        height: 45%;
+        height: 38%;
         width: 100%;
         background: whitesmoke;
         /* height: 100%; */
@@ -33,31 +38,22 @@
     #right {
         position: absolute;
         bottom: 0px;
-        height: 54.5%;
+        height: 61.5%;
         width: 100%;
         background: whitesmoke;
         /* height: 100%; */
         overflow: scroll;
     }
-    /* unvisited link */
     a:link {
         color: green;
-    }
-    /* visited link */
-    a:visited {
-        color: gray;
-    }
-    /* mouse over link */
-    a:hover {
-        color: blue;
-    }
-    /* selected link */
-    a:active {
-        color: red;
+        position: absolute;
+        padding: 10px;
+        top: 0px;
+        right: 0px;
     }
     .vl {
         position: absolute;
-        top: 45%;
+        top: 38%;
         height: 3px;
         width: 100%;
         background: green;
@@ -82,9 +78,14 @@
         padding-left: 15px;
         padding-right: 15px;
     }
+    h1 {
+        margin-left: 25px;
+        font-family: verdana;
+    }
     .center {
-        margin-left: 5%;
-        margin-right: auto;
+        margin-top: 5%;
+        margin-left: 25px;
+        margin-right: 50%;
     }
     * {
         box-sizing: border-box;
@@ -107,18 +108,7 @@
     /* unvisited link */
     a:link {
         color: green;
-    }
-    /* visited link */
-    a:visited {
-        color: gray;
-    }
-    /* mouse over link */
-    a:hover {
-        color: blue;
-    }
-    /* selected link */
-    a:active {
-        color: red;
+        padding: 20px;
     }
     .vl {
         border-left: 3px solid green;
