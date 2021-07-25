@@ -12,11 +12,12 @@
     <script>
         hljs.initHighlightingOnLoad();
     </script>
+    <script src="main.js" defer></script>
 </head>
 
 <body>
     <div id="content">
-        <div id="left">
+        <div id="x">
             <h1>SQL Cheat Sheet</h1>
             <table class="center">
                 <tbody>
@@ -74,7 +75,8 @@
                     </tr>
                 </tbody>
             </table>
-            <pre contenteditable="true"><code class="sql">
+            <div class="code-wrapper">
+                <pre><code class="sql" id="code-x">
   CREATE TABLE EMPLOYEE( id INT PRIMARY KEY, name VARCHAR(25) ); 
   INSERT INTO EMPLOYEE(id, name) VALUES(1, 'aman'); 
   INSERT INTO EMPLOYEE(id, name) VALUES(2, 'pihu'); 
@@ -93,13 +95,16 @@
   INSERT INTO DEPARTMENT(id, name) VALUES(7, 'ECE'); 
   
   </code></pre>
+                <button id="copy-button-x" class="copy-button">Copy</button>
+            </div>
             <div id="practice">
                 <a href="https://livesql.oracle.com/" target="_blank">PRACTICE</a>
             </div>
         </div>
         <div class="vl"></div>
-        <div id="right" contenteditable="true">
-            <pre><code class="sql">
+        <div id="y">
+            <div class="code-wrapper">
+                <pre><code class="sql" id="code-y">
   SELECT * FROM EMPLOYEE e JOIN DEPARTMENT d ON e.id = d.id; 
   -- ID NAME    ID NAME 
   -- 1  aman    1  HR 
@@ -275,9 +280,11 @@
   DROP TABLE EMPLOYEE; 
   DROP TABLE DEPARTMENT; 
 </code></pre>
+                <button id="copy-button-y" class="copy-button">Copy</button>
+            </div>
         </div>
     </div>
-
+    <span id="copy-success">Code copied! :)</span>
 </body>
 
 </html>

@@ -1,34 +1,21 @@
+* {
+    box-sizing: border-box;
+    margin: 0%;
+}
+
+#content,
+html,
+body {
+    height: 100%;
+    color: green;
+}
+
+.code-wrapper {
+    position: relative;
+}
+
 @media (orientation:portrait) {
-    #content,
-    html,
-    body {
-        height: 100%;
-        color: green;
-    }
-    table,
-    th,
-    td {
-        border: 1px solid black;
-        border-collapse: collapse;
-        padding-left: 15px;
-        padding-right: 15px;
-        font-family: verdana;
-    }
-    h1 {
-        margin-left: 25px;
-        font-family: verdana;
-        font-size: 24px;
-    }
-    .center {
-        margin-top: 5%;
-        margin-left: 25px;
-        margin-right: auto;
-    }
-    * {
-        box-sizing: border-box;
-        margin: 0%;
-    }
-    #left {
+    #x {
         position: absolute;
         top: 0px;
         height: 38%;
@@ -37,7 +24,7 @@
         /* height: 100%; */
         overflow: scroll;
     }
-    #right {
+    #y {
         position: absolute;
         bottom: 0px;
         height: 61.5%;
@@ -45,6 +32,11 @@
         background: whitesmoke;
         /* height: 100%; */
         overflow: scroll;
+    }
+    h1 {
+        margin-left: 25px;
+        font-family: verdana;
+        font-size: 24px;
     }
     a:link {
         color: green;
@@ -66,54 +58,27 @@
 }
 
 @media (orientation: landscape) {
-    /* some CSS here */
     #content,
     html,
     body {
         height: 100%;
         color: green;
     }
-    table,
-    th,
-    td {
-        border: 1px solid black;
-        border-collapse: collapse;
-        padding-left: 15px;
-        padding-right: 15px;
-        font-family: verdana;
-    }
-    h1 {
-        margin-left: 25px;
-        font-family: verdana;
-    }
-    .center {
-        margin-top: 5%;
-        margin-left: 25px;
-        margin-right: 50%;
-    }
-    * {
-        box-sizing: border-box;
-        margin: 0%;
-    }
-    #left {
+    #x {
+        position: relative;
         float: left;
         width: 45%;
         background: whitesmoke;
         height: 100%;
         overflow: scroll;
     }
-    #right {
-        float: left;
-        width: 55%;
+    #y {
+        position: relative;
+        float: right;
+        width: 54.8%;
         background: whitesmoke;
         height: 100%;
         overflow: scroll;
-    }
-    /* unvisited link */
-    a:link {
-        color: green;
-        padding: 20px;
-        font-family: verdana;
     }
     .vl {
         border-left: 3px solid green;
@@ -122,4 +87,69 @@
         left: 45%;
         top: 0;
     }
+    h1 {
+        margin-left: 25px;
+        font-family: verdana;
+    }
+    a:link {
+        color: green;
+        padding: 20px;
+        font-family: verdana;
+    }
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: verdana;
+}
+
+.center {
+    margin-top: 5%;
+    margin-left: 25px;
+    margin-right: auto;
+}
+
+.copy-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 7px;
+    background-color: whitesmoke;
+    color: brown;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    opacity: 0;
+    outline: none;
+}
+
+.copy-button:hover {
+    background-color: green;
+    color: white;
+}
+
+.code-wrapper:hover .copy-button {
+    opacity: 1;
+}
+
+#copy-success {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: green;
+    color: white;
+    padding: 10px;
+    font-size: 24px;
+    border-radius: 5px;
+    display: none;
+}
+
+#copy-success.show-message {
+    display: inline-block;
 }
