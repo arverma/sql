@@ -12,10 +12,12 @@
         border-collapse: collapse;
         padding-left: 15px;
         padding-right: 15px;
+        font-family: verdana;
     }
     h1 {
         margin-left: 25px;
         font-family: verdana;
+        font-size: 24px;
     }
     .center {
         margin-top: 5%;
@@ -50,6 +52,7 @@
         padding: 10px;
         top: 0px;
         right: 0px;
+        font-family: verdana;
     }
     .vl {
         position: absolute;
@@ -77,6 +80,7 @@
         border-collapse: collapse;
         padding-left: 15px;
         padding-right: 15px;
+        font-family: verdana;
     }
     h1 {
         margin-left: 25px;
@@ -109,6 +113,7 @@
     a:link {
         color: green;
         padding: 20px;
+        font-family: verdana;
     }
     .vl {
         border-left: 3px solid green;
