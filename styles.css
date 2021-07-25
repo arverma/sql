@@ -21,13 +21,6 @@
         box-sizing: border-box;
         margin: 0%;
     }
-    /* #left {
-    float: left;
-    width: 45%;
-    background: whitesmoke;
-    height: 100%;
-    overflow: scroll;
-} */
     #left {
         position: absolute;
         top: 0px;
@@ -37,13 +30,6 @@
         /* height: 100%; */
         overflow: scroll;
     }
-    /* #right {
-    float: left;
-    width: 55%;
-    background: whitesmoke;
-    height: 100%;
-    overflow: scroll;
-} */
     #right {
         position: absolute;
         bottom: 0px;
@@ -68,6 +54,12 @@
     /* selected link */
     a:active {
         color: red;
+    }
+    .vl {
+        border-left: 3px solid green;
+        width: 100%;
+        position: absolute;
+        top: 45%;
     }
 }
 
@@ -148,7 +140,7 @@
     }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 600px) {
     /* some CSS here */
     #content,
     html,
@@ -201,5 +193,12 @@
     /* selected link */
     a:active {
         color: red;
+    }
+    .vl {
+        border-left: 3px solid green;
+        height: 100%;
+        position: absolute;
+        left: 45%;
+        top: 0;
     }
 }
