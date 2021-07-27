@@ -77,7 +77,7 @@
             </table>
             <div class="code-wrapper">
                 <pre><code class="sql" id="code-x">
-  CREATE TABLE EMPLOYEE( id INT PRIMARY KEY, name VARCHAR(25) ); 
+  CREATE TABLE EMPLOYEE( id INT, name VARCHAR(25) ); 
   INSERT INTO EMPLOYEE(id, name) VALUES(1, 'aman'); 
   INSERT INTO EMPLOYEE(id, name) VALUES(2, 'pihu'); 
   INSERT INTO EMPLOYEE(id, name) VALUES(3, 'rajeev'); 
@@ -276,6 +276,23 @@
   SELECT * FROM EMPLOYEE WHERE NAME LIKE '%h_'; 
   -- ID NAME 
   -- 2 pihu
+
+ SELECT COUNT(*), SUM(id), AVG(id), MAX(id), MIN(id), ROUND(AVG(id), 0) FROM EMPLOYEE;
+  -- COUNT(*)	SUM(ID) AVG(ID) MAX(ID)	MIN(ID)	ROUND(AVG(ID),0)
+  -- 6	        21	    3.5	    6	    1	    4
+
+  SELECT UPPER(NAME) FROM EMPLOYEE LIMIT 2;
+  -- UPPER(NAME)
+  -- AMAN
+  -- PIHU
+
+  SELECT DISTINCT(LOWER(NAME)) FROM DEPARTMENT;
+  -- (LOWER(NAME))
+  -- ds
+  -- hr
+  -- de
+  -- ece
+
   
   DROP TABLE EMPLOYEE; 
   DROP TABLE DEPARTMENT; 
